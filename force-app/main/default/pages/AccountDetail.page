@@ -1,6 +1,32 @@
-<apex:page>
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Congratulations</h1>
-This is your new Page
-<!-- End Default Content REMOVE THIS -->
+<apex:page standardController="Account">
+    {! Account.Name }
+    <apex:pageBlock title="Account Details">
+        <apex:pageBlockSection>
+            <apex:outputField value="{! Account.Name }" />
+            <apex:outputField value="{! Account.Phone }" />
+            <apex:outputField value="{! Account.Industry }" />
+            <apex:outputField value="{! Account.AnnualRevenue }" />
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="Contacts">
+        <apex:pageBlockTable value="{! Account.contacts }" var="contact">
+            <apex:column value="{!contact.FirstName}" />
+            <apex:column value="{!contact.LastName}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Opportunities">
+        <apex:pageBlockTable value="{! Account.Opportunities }" var="opp">
+            <apex:column value="{! opp.Name }" />
+            <apex:column value="{! opp.StageName }" />
+            <apex:column value="{! opp.CreatedDate }" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Opportunities">
+        <ul>
+            <apex:repeat value="{! Account.Opportunities }" var="opp">
+                <li>{! opp.Name }</li>
+            </apex:repeat>
+        </ul>
+    </apex:pageBlock>
+
 </apex:page>
