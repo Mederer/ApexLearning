@@ -1,0 +1,11 @@
+<apex:page standardController="Course__c" recordSetVar="courses">
+    <apex:pageBlock>
+        <apex:pageBlockSection title="Courses">
+            <ul>
+                <apex:repeat value="{! courses }" var="course">
+                    <li>{! course.Course_Name__c }</li>
+                </apex:repeat>
+            </ul>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
