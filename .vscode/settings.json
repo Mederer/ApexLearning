@@ -11,5 +11,5 @@
     "html": true
   },
   "salesforcedx-vscode-core.show-cli-success-msg": false,
-  "salesforce.einsteinForDevelopers.enableAutocompletions": false
+  "salesforce.einsteinForDevelopers.enableAutocompletions": true
 }
